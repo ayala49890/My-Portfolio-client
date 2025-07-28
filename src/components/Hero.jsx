@@ -2,12 +2,13 @@ import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import bg1 from '../images/bg1.jpg';
 import bg2 from '../images/1.jpg';
+import bg3 from '../images/code.png';
 
 export default function Hero() {
   const profile = useSelector((state) => state.profile.data);
 
   const randomBg = useMemo(() => {
-    const images = [bg1, bg2];
+    const images = [bg1, bg2, bg3];
     const index = Math.floor(Math.random() * images.length);
     return images[index];
   }, []);

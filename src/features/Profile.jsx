@@ -1,5 +1,5 @@
-import { profile } from '../../data';
-import Skills from '../skills/Skills';
+import { profile } from '../data';
+import Skills from './Skills';
 
 export default function Profile() {
 

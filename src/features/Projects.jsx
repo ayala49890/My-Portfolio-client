@@ -1,6 +1,6 @@
 import { useMemo, useState, useRef } from 'react';
 import { X, ZoomIn, ZoomOut, RotateCw } from 'lucide-react';
-import { projects } from '../../data';
+import { projects } from '../data';
 
 export default function Projects() {
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);

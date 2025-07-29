@@ -1,5 +1,5 @@
 import { Briefcase, ExternalLink } from 'lucide-react';
-import { experiences } from '../../data';
+import { experiences } from '../data';
 export default function Experiences() {
 
 

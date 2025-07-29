@@ -1,7 +1,7 @@
 import coursesImage from './images/courses.png'
 import clinicImage from './images/clinic.png'
-import recepiesImage from './images/recepies.png'
 import workersImage from './images/workers.png'
+import recepiesImage from '/img/recepies.png'
 import amdocIcon from './images/amdocs.png'
 export const profile = {
   "id": 1,
@@ -189,17 +189,6 @@ export const projects = [
     "startDate": "2024-07-23T12:13:01.483",
     "endDate": "2024-07-23T12:13:01.483",
     "technologies": [
-      {
-        "id": 19,
-        "projectId": 3,
-        "skillId": 4,
-        "skill": {
-          "id": 4,
-          "name": "JavaScript",
-          "category": "Programming Languages & Scripting",
-          "iconUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-        }
-      },
       {
         "id": 20,
         "projectId": 3,

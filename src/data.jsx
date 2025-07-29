@@ -137,7 +137,7 @@ export const projects = [
     "name": "Recipes Sharing Platform",
     "description": "Community driven recipe site with React frontend and Node.js backend, featuring role based user permissions",
     "url": "https://github.com/ayala49890/recipesApp",
-    "imageUrl": "https://localhost:7101/Images/recepies.png",
+    "imageUrl": "/images/recipesApp.jpg",
     "startDate": "2023-07-23T13:53:10.458",
     "endDate": "2023-07-23T13:53:10.458",
     "technologies": [
@@ -181,7 +181,7 @@ export const projects = [
     "name": "Workers Manager System",
     "description": "End to end HR management app using",
     "url": "https://github.com/ayala49890/workersApp",
-    "imageUrl": "https://localhost:7101/Images/workers.png",
+    "imageUrl": "/images/workersApp.jpg",
     "startDate": "2024-07-23T12:13:01.483",
     "endDate": "2024-07-23T12:13:01.483",
     "technologies": [
@@ -236,7 +236,7 @@ export const projects = [
     "name": "Clinic Management System",
     "description": "Development of a .NET Core-based API system for clinic management, featuring database connectivity via Entity Framework, object mapping with AutoMapper, asynchronous processing, and custom middleware management.",
     "url": "https://github.com/ayala49890/ClinicAPI",
-    "imageUrl": "https://localhost:7101/Images/clinic.png",
+    "imageUrl": "/images/clinic.jpg",
     "startDate": "2023-07-24T12:02:28.31",
     "endDate": "2023-07-24T12:02:28.31",
     "technologies": [
@@ -280,7 +280,7 @@ export const projects = [
     "name": "Courses Management Portal",
     "description": "Development of a website for managing digital and face-to-face studies",
     "url": "https://github.com/ayala49890/universityApp",
-    "imageUrl": "https://localhost:7101/Images/courses.png",
+    "imageUrl": "/images/Courses.jpg",
     "startDate": "2024-07-23T13:30:38.716",
     "endDate": "2024-07-23T13:30:38.716",
     "technologies": [

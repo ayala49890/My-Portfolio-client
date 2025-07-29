@@ -1,42 +1,22 @@
-import { useEffect, useMemo, useState, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProjects } from './projectsSlice';
+import { useMemo, useState, useRef } from 'react';
 import { X, ZoomIn, ZoomOut, RotateCw } from 'lucide-react';
+import { projects } from '../../data';
 
 export default function Projects() {
-  const dispatch = useDispatch();
-  const { data: projects, status, error } = useSelector((state) => state.projects);
   const [selectedImageUrl, setSelectedImageUrl] = useState(null);
   const [zoom, setZoom] = useState(1);
   const [rotation, setRotation] = useState(0);
-
   const scrollContainerRef = useRef(null);
 
   const minZoom = 1;
   const maxZoom = 3;
   const zoomStep = 0.1;
 
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchProjects());
-    }
-  }, [dispatch, status]);
-
-  useEffect(() => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollTop = 0;
-      scrollContainerRef.current.scrollLeft = 0;
-    }
-  }, [selectedImageUrl, zoom, rotation]);
+  
 
   const sortedProjects = useMemo(() => {
-    if (!projects) return [];
-    return [...projects].sort((a, b) => {
-      const dateA = new Date(a.startDate || '1970-01-01');
-      const dateB = new Date(b.startDate || '1970-01-01');
-      return dateB - dateA;
-    });
-  }, [projects]);
+    return [...projects].sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
+  }, []);
 
   const handleZoomIn = () => {
     setZoom((z) => Math.min(maxZoom, parseFloat((z + zoomStep).toFixed(2))));
@@ -55,9 +35,6 @@ export default function Projects() {
     setRotation(0);
     setSelectedImageUrl(null);
   };
-
-  if (status === 'loading') return <p className="text-gray-500 text-center mt-4">Loading...</p>;
-  if (status === 'failed') return <p className="text-red-500 text-center mt-4">Error: {error}</p>;
 
   return (
     <>
@@ -182,7 +159,6 @@ export default function Projects() {
                   maxWidth: '100%',
                   maxHeight: '100%',
                 }}
-                className=""
               />
             </div>
           </div>

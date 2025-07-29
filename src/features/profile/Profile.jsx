@@ -1,20 +1,7 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProfile } from './profileSlice';
+import { profile } from '../../data';
 import Skills from '../skills/Skills';
 
 export default function Profile() {
-  const dispatch = useDispatch();
-  const { data: profile, status, error } = useSelector((state) => state.profile);
-
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchProfile());
-    }
-  }, [dispatch, status]);
-
-  if (status === 'loading') return <p className="text-center text-gray-500 mt-4">Loading...</p>;
-  if (status === 'failed') return <p className="text-center text-red-500 mt-4">Error: {error}</p>;
 
   return (
     <section id="about" className="min-h-screen bg-white py-20 px-6">

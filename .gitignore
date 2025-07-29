@@ -26,4 +26,7 @@ yarn-error.log*
 **/bin/
 .vs/
 
+node_modules/
+build/
+.env
 

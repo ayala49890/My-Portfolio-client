@@ -1,22 +1,7 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchExperiences } from './experiencesSlice';
 import { Briefcase, ExternalLink } from 'lucide-react';
-
+import { experiences } from '../../data';
 export default function Experiences() {
-  const dispatch = useDispatch();
-  const { data: experiences = [], status = 'idle', error = null } = useSelector(
-    (state) => state.experiences
-  ) || {};
-
-  useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchExperiences());
-    }
-  }, [dispatch, status]);
-
-  if (status === 'loading') return <p className="text-gray-500 text-center mt-4">Loading...</p>;
-  if (status === 'failed') return <p className="text-red-500 text-center mt-4">Error: {error}</p>;
+ 
 
   return (
     <section id="experience" className="bg-[#0e1a20] text-[#fce8c7] py-20 px-4">
@@ -25,9 +10,10 @@ export default function Experiences() {
         <ul className="space-y-6">
           {experiences.map((exp) => {
             const dashIndex = exp.companyName.indexOf('-');
-            const titleAfterDash = dashIndex !== -1
-              ? exp.companyName.substring(dashIndex + 1).trim()
-              : exp.companyName;
+            const titleAfterDash =
+              dashIndex !== -1
+                ? exp.companyName.substring(dashIndex + 1).trim()
+                : exp.companyName;
 
             return (
               <li
@@ -70,14 +56,17 @@ export default function Experiences() {
                       )}
                     </div>
 
-
                     <p className="text-sm text-[#a3a3a3] mb-3">
                       {exp.startDate?.substring(0, 4) === exp.endDate?.substring(0, 4)
                         ? exp.startDate?.substring(0, 4)
-                        : `${exp.startDate?.substring(0, 4)} – ${exp.endDate?.substring(0, 4) || 'Present'}`}
+                        : `${exp.startDate?.substring(0, 4)} – ${
+                            exp.endDate?.substring(0, 4) || 'Present'
+                          }`}
                     </p>
 
-                    <p className="text-base text-[#e0d9ce] whitespace-pre-line">{exp.description}</p>
+                    <p className="text-base text-[#e0d9ce] whitespace-pre-line">
+                      {exp.description}
+                    </p>
                   </div>
                 </div>
               </li>

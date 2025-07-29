@@ -1,7 +1,7 @@
 import { Briefcase, ExternalLink } from 'lucide-react';
 import { experiences } from '../../data';
 export default function Experiences() {
- 
+
 
   return (
     <section id="experience" className="bg-[#0e1a20] text-[#fce8c7] py-20 px-4">
@@ -28,19 +28,7 @@ export default function Experiences() {
                     <h3 className="text-xl font-semibold text-[#fce8c7]">{exp.role}</h3>
 
                     <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        {exp.iconUrl && (
-                          <img
-                            src={exp.iconUrl}
-                            alt={`${exp.companyName} logo`}
-                            className="w-6 h-6 object-contain rounded"
-                            onError={(e) => {
-                              e.currentTarget.style.display = 'none';
-                            }}
-                          />
-                        )}
-                        <p className="text-sm text-[#d2bfa2] font-medium">{exp.companyName}</p>
-                      </div>
+                      <p className="text-sm text-[#d2bfa2] font-medium">{exp.companyName}</p>
 
                       {exp.link && (
                         <a
@@ -59,9 +47,8 @@ export default function Experiences() {
                     <p className="text-sm text-[#a3a3a3] mb-3">
                       {exp.startDate?.substring(0, 4) === exp.endDate?.substring(0, 4)
                         ? exp.startDate?.substring(0, 4)
-                        : `${exp.startDate?.substring(0, 4)} – ${
-                            exp.endDate?.substring(0, 4) || 'Present'
-                          }`}
+                        : `${exp.startDate?.substring(0, 4)} – ${exp.endDate?.substring(0, 4) || 'Present'
+                        }`}
                     </p>
 
                     <p className="text-base text-[#e0d9ce] whitespace-pre-line">

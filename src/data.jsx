@@ -6,7 +6,7 @@ import amdocIcon from './images/amdocs.png'
 export const profile = {
   "id": 1,
   "fullName": "Ayala Hirshfeld",
-  "title": "Full Stuck Developer",
+  "title": "Full-Stack Developer",
   "summary": `A passionate Full Stack Developer with hands-on experience in building scalable, modern web applications. \nI enjoy diving into complex codebases, writing clean and maintainable code, and continuously learning new technologies. Whether working independently or as part of a team, I take pride in delivering high-quality results on time and driving real value to the products I work on.`,
   "email": "ayala49890@gmail.com",
   "phone": "0556749890",

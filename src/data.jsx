@@ -1,7 +1,7 @@
 import coursesImage from './images/courses.png'
 import clinicImage from './images/clinic.png'
 import workersImage from './images/workers.png'
-import recepiesImage from '/img/recepies.png'
+import recepiesImage from './images/recepies.png'
 import amdocIcon from './images/amdocs.png'
 export const profile = {
   "id": 1,

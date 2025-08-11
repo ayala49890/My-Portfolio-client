@@ -12,7 +12,7 @@ export default function Projects() {
   const maxZoom = 3;
   const zoomStep = 0.1;
 
-  
+
 
   const sortedProjects = useMemo(() => {
     return [...projects].sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
@@ -45,28 +45,28 @@ export default function Projects() {
             {sortedProjects.map((project) => (
               <li
                 key={project.id}
-                className="border border-gray-300 rounded-lg p-4 shadow hover:shadow-md transition duration-200 flex gap-4"
+                className="border border-gray-300 rounded-lg p-4 shadow hover:shadow-md transition duration-200 flex flex-col sm:flex-row gap-4"
               >
                 <div
-                  className="w-1/3 flex-shrink-0 cursor-pointer"
+                  className="w-full sm:w-1/3 flex-shrink-0 cursor-pointer"
                   onClick={() => setSelectedImageUrl(project.imageUrl)}
                 >
                   {project.imageUrl ? (
                     <img
                       src={project.imageUrl}
                       alt={project.name}
-                      className="w-full h-full object-cover rounded"
+                      className="w-full h-48 sm:h-full object-cover rounded"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 flex items-center justify-center rounded text-gray-400">
+                    <div className="w-full h-48 sm:h-full bg-gray-200 flex items-center justify-center rounded text-gray-400">
                       No Image
                     </div>
                   )}
                 </div>
 
-                <div className="w-2/3">
-                  <h3 className="text-xl font-semibold text-gray-800">{project.name}</h3>
-                  <p className="text-gray-600 mt-1">{project.description}</p>
+                <div className="w-full sm:w-2/3">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800">{project.name}</h3>
+                  <p className="text-gray-600 mt-1 text-sm sm:text-base">{project.description}</p>
                   <p className="text-sm mt-2 text-gray-500">
                     {project.startDate ? project.startDate.substring(0, 4) : 'N/A'}
                   </p>
@@ -87,6 +87,7 @@ export default function Projects() {
                   </a>
                 </div>
               </li>
+
             ))}
           </ul>
         </div>
@@ -114,11 +115,10 @@ export default function Projects() {
                 onClick={handleZoomOut}
                 disabled={zoom <= minZoom}
                 title="Zoom Out"
-                className={`p-2 rounded-full border transition ${
-                  zoom <= minZoom
+                className={`p-2 rounded-full border transition ${zoom <= minZoom
                     ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     : 'bg-white text-black hover:bg-gray-100 shadow'
-                }`}
+                  }`}
               >
                 <ZoomOut size={20} />
               </button>
@@ -127,11 +127,10 @@ export default function Projects() {
                 onClick={handleZoomIn}
                 disabled={zoom >= maxZoom}
                 title="Zoom In"
-                className={`p-2 rounded-full border transition ${
-                  zoom >= maxZoom
+                className={`p-2 rounded-full border transition ${zoom >= maxZoom
                     ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     : 'bg-white text-black hover:bg-gray-100 shadow'
-                }`}
+                  }`}
               >
                 <ZoomIn size={20} />
               </button>
